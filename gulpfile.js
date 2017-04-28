@@ -24,12 +24,23 @@ gulp.task('build-sass', function() {
     .pipe(gulp.dest('public/css/'));
 });
 
-gulp.task('build-bower', function(){
+// Build bower packages and concatanate
+gulp.task('build-bower', function() {
   return gulp.src('./bower.json')
-   .pipe(mainBowerFiles('**/*.js'))
-   .pipe(concat('bower.min.js'))
-   .pipe(uglify())
-   .pipe(gulp.dest('public/js/'));
+    .pipe(mainBowerFiles('**/*.js'))
+    .pipe(concat('bower.min.js'))
+    .pipe(uglify())
+      .on('error', function(e){
+        console.log(e);
+      })
+    .pipe(gulp.dest('public/js/'));
 });
 
-gulp.task('default', ['build-materialize', 'build-sass', 'build-bower']);
+// Minify and concatanate js files
+gulp.task('concat-js', function() {
+  return gulp.src('src/js/*.js')
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest('public/js/'));
+});
+
+gulp.task('default', ['build-materialize', 'build-sass', 'build-bower', 'concat-js']);
