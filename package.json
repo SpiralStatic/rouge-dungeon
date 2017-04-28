@@ -1,0 +1,21 @@
+{
+  "name": "rouge-dungeon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpiralStatic/rouge-dungeon.git"
+  },
+  "author": "Chris Tsoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SpiralStatic/rouge-dungeon/issues"
+  },
+  "homepage": "https://github.com/SpiralStatic/rouge-dungeon#readme"
+}
