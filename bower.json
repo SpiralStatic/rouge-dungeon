@@ -1,0 +1,22 @@
+{
+  "name": "rouge-dungeon",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Chris Tsoi"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/SpiralStatic/rouge-dungeon",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.98.2",
+    "jquery": "^3.2.1"
+  }
+}
