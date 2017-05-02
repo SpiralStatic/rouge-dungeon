@@ -4,8 +4,11 @@ class GameDisplay {
     this.context = this.canvas.getContext('2d');
     this.container = $(this.canvas).parent();
 
+    this.images = [];
+
     this.onResize();
     this.responsiveCanvas();
+    this.loadImages();
   }
 
   onResize() {
@@ -19,15 +22,24 @@ class GameDisplay {
   }
 
   drawView(GameLogic) {
-    this.context.fillStyle = "#e3406e";
     GameLogic.area.map((row, i) => {
       row.map((tile, j) => {
-        if(tile !== 0) this.drawTile(j, i);
+        this.drawTile(this.images[tile], j, i);
       });
     });
   }
 
-  drawTile(x, y) {
-    this.context.fillRect(x * this.tileSize, y * this.tileSize, this.tileSize, this.tileSize);
+  drawTile(image, x, y) {
+    this.context.drawImage(image, x * this.tileSize, y * this.tileSize, this.tileSize, this.tileSize);
+  }
+
+  loadImages() {
+    const imageSrc = ["assets/images/0_FancyPaved.png", "assets/images/1_WoodWall.png"];
+
+    for(let i = 0; i < imageSrc.length; i++) {
+      let tempImage = new Image();
+      tempImage.src = imageSrc[i];
+      this.images.push(tempImage);
+    }
   }
 }
