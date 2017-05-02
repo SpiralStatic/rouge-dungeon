@@ -33,13 +33,18 @@ class GameDisplay {
     this.context.drawImage(image, x * this.tileSize, y * this.tileSize, this.tileSize, this.tileSize);
   }
 
+  drawPlayer(player) {
+    this.drawTile(this.images[0], player.x, player.y);
+  }
+
   loadImages() {
-    const imageSrc = ["assets/images/0_FancyPaved.png", "assets/images/1_WoodWall.png"];
+    const imageSrc = ["assets/images/0_PlayerRight.png", "assets/images/100_WoodWall.png", "assets/images/200_FancyPaved.png"];
 
     for(let i = 0; i < imageSrc.length; i++) {
       let tempImage = new Image();
       tempImage.src = imageSrc[i];
-      this.images.push(tempImage);
+      this.images[imageSrc[i].replace(/\D/g, '')] = tempImage;
     }
+    console.log(this.images);
   }
 }

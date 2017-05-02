@@ -7,5 +7,6 @@ class GameEngine {
 
   draw() {
     this.display.drawView(this.gameLogic);
+    this.display.drawPlayer(this.gameLogic.player);
   }
 }
