@@ -1,6 +1,10 @@
 var express = require('express');
+var helmet = require('helmet');
 
 var app = express();
+
+// Use of helmet for security
+app.use(helmet());
 
 // Declare public folder for static assets
 app.use(express.static(__dirname + "/public"));
