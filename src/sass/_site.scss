@@ -1,0 +1,31 @@
+/*** Colors ***/
+$primary-color: color("red", "accent-4");
+$primary-color-light: lighten($primary-color, 15%);
+$primary-color-dark: darken($primary-color, 15%);
+
+$secondary-color: color("teal", "lighten-1");
+$success-color: color("green", "base");
+$error-color: color("red", "base");
+$link-color: color("light-blue", "darken-1");
+
+/*** Fonts ***/
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+
+body {
+  background: url('../assets/images/symphony.png');
+
+  nav {
+    background:
+      linear-gradient(
+        rgba(175, 25, 25, 0.8),
+        rgba(175, 25, 25, 0.8)
+      ),
+      url('../assets/images/symphony.png');
+
+    font-family: 'Satisfy', cursive;
+  }
+
+  main {
+    margin-top: $navbar-height-mobile;
+  }
+}
