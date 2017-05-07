@@ -6,13 +6,8 @@ class GameDisplay {
 
     this.images = [];
 
-    this.onResize();
     this.responsiveCanvas();
     this.loadImages();
-  }
-
-  onResize() {
-    $(window).resize(() => this.responsiveCanvas());
   }
 
   responsiveCanvas() {

@@ -44,3 +44,5 @@ gulp.task('concat-js', function() {
 });
 
 gulp.task('default', ['build-materialize', 'build-sass', 'build-bower', 'concat-js']);
+
+gulp.task('buildjs', ['concat-js']);

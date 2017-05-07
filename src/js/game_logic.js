@@ -15,9 +15,10 @@ class GameLogic {
       [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]
     ];
 
-    this.player = {
-      x: 12,
-      y: 6
-    };
+    this.player = new PlayerController();
+  }
+
+  getInput() {
+    return !this.player.isTurn;
   }
 }
