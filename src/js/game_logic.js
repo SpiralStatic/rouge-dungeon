@@ -15,10 +15,22 @@ class GameLogic {
       [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]
     ];
 
-    this.player = new PlayerController();
+    this.player = new PlayerController(this);
   }
 
   getInput() {
     return !this.player.isTurn;
+  }
+
+  isValid(nextPosition) {
+    try {
+      const tile = this.area[nextPosition.y][nextPosition.x];
+      const tileType = parseInt(tile.toString()[0]);
+
+      if(tileType === 1) return false;
+      else return true;
+    } catch (e) {
+      return false;
+    }
   }
 }

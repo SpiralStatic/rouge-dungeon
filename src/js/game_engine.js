@@ -29,7 +29,6 @@ class GameEngine {
         }, 0);
         break;
       case 'TURN_TAKEN':
-        console.log("turn taken");
         this.display.drawView(this.gameLogic);
         this.display.drawPlayer(this.gameLogic.player.position);
         this.state = 'WAITING_FOR_INPUT';

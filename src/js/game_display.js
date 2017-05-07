@@ -36,10 +36,9 @@ class GameDisplay {
     const imageSrc = ["assets/images/0_PlayerRight.png", "assets/images/100_WoodWall.png", "assets/images/200_FancyPaved.png"];
 
     for(let i = 0; i < imageSrc.length; i++) {
-      let tempImage = new Image();
+      const tempImage = new Image();
       tempImage.src = imageSrc[i];
       this.images[imageSrc[i].replace(/\D/g, '')] = tempImage;
     }
-    console.log(this.images);
   }
 }

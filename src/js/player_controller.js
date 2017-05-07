@@ -1,5 +1,6 @@
 class PlayerController {
-  constructor() {
+  constructor(GameLogic) {
+    this.gameLogic = GameLogic;
     this.position = {
       x: 12,
       y: 6
@@ -39,9 +40,14 @@ class PlayerController {
   }
 
   movePlayer(diffX, diffY) {
-    this.position.x += diffX;
-    this.position.y += diffY;
-    this.isTurn = false;
-    console.log("turn")
+    let nextPosition = {
+      x: this.position.x + diffX,
+      y: this.position.y + diffY
+    };
+
+    if(this.gameLogic.isValid(nextPosition)) {
+      this.position = nextPosition;
+      this.isTurn = false;
+    }
   }
 }
